@@ -61,19 +61,30 @@ function startGame() {
                 "EHRTVW", "CIMOTU", "DISTTY", "EIOSST",
                 "DELRVY", "ACHOPS", "HIMNQU", "EEINSU",
                 "EEGHNW", "AFFKPS", "HLNNRZ", "DEILRX" ];
+  shuffleArray(cubes);
   var board = "<table>";
 
   for (var y=0; y<4; y++){
     board += "<tr>";    
     for (var x=0; x<4; x++){
       var letter = Math.floor(Math.random() * 6);
-      board += "<td>" + cubes[(x + y*4)].charAt(letter) + "</td>";
+      board += "<td>" + cubes[(x + y*4)] + "</td>";
     }
     board += "</tr>";
   }
 
   var div = document.getElementById('board');
   div.innerHTML = board;
+}
+
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
 }
 
 function init() {
