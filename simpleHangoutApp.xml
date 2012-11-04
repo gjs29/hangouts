@@ -44,7 +44,8 @@
 
 
 <p>
-<input class="button" type="button" value="Start game" id="showParticipants" 
+<input class="button" type="button" value="Start game" id="startGame" 
+    style="visibility:hidden;"
     onClick="startGame()"/>
 </p>
 
@@ -79,7 +80,7 @@ function init() {
   gapi.hangout.onApiReady.add(
       function(eventObj) {
         if (eventObj.isApiReady) {
-          document.getElementById('showParticipants')
+          document.getElementById('startGame')
             .style.visibility = 'visible';
         }
       });
