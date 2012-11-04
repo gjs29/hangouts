@@ -53,20 +53,23 @@ td {
 <script src="https://hangoutsapi.talkgadget.google.com/hangouts/api/hangout.js?v=1.0" ></script>
 
 <h3>Boggle</h3>
+<h4>Time:</h4><div id="time"></div>
 
-
+<div id="board"></div>
 <p>
 <input class="button" type="button" value="Start game" id="startGame" 
     style="visibility:hidden;"
     onClick="startGame()"/>
 </p>
 
-<div id="board"></div>
 
 <hr>
 
 
 <script>
+var seconds = 0;
+var timer;
+
 function startGame() {
   
   var cubes = [ "AAEEGN", "ELRTTY", "AOOTTW", "ABBJOO",
@@ -87,6 +90,20 @@ function startGame() {
 
   var div = document.getElementById('board');
   div.innerHTML = board;
+  startTimer();
+}
+
+function startTimer(){
+  seconds = 3;
+  timer = setInterval(function(){countDown()},1000);
+}
+
+function countDown(){
+  seconds--;
+  document.getElementById("timer").innerHTML = seconds;
+  if(seconds == 0){
+    clearInterval(timer);
+  }
 }
 
 function shuffleArray(array) {
