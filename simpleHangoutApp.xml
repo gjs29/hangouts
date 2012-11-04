@@ -100,7 +100,7 @@ function startTimer(){
 
 function countDown(){
   seconds--;
-  document.getElementById("timer").innerHTML = seconds;
+  document.getElementById("time").innerHTML = seconds;
   if(seconds == 0){
     clearInterval(timer);
   }
