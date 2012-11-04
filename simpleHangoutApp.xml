@@ -53,7 +53,7 @@ td {
 <script src="https://hangoutsapi.talkgadget.google.com/hangouts/api/hangout.js?v=1.0" ></script>
 
 <h3>Boggle</h3>
-<h4>Time:</h4><div id="time"></div>
+<div id="time">Time: </div>
 
 <div id="board"></div>
 <p>
@@ -100,9 +100,10 @@ function startTimer(){
 
 function countDown(){
   seconds--;
-  document.getElementById("time").innerHTML = seconds;
+  document.getElementById("time").innerHTML = "Time: " + seconds;
   if(seconds == 0){
     clearInterval(timer);
+    document.getElementById("time").innerHTML = "GAME OVER";
   }
 }
 
