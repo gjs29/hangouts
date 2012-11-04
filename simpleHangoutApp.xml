@@ -57,19 +57,20 @@
 <script>
 function startGame() {
   
-  var letters = ["a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d"];
-
+  var cubes = [ "AAEEGN", "ELRTTY", "AOOTTW", "ABBJOO",
+                "EHRTVW", "CIMOTU", "DISTTY", "EIOSST",
+                "DELRVY", "ACHOPS", "HIMNQU", "EEINSU",
+                "EEGHNW", "AFFKPS", "HLNNRZ", "DEILRX" ];
   var board = "<table>";
 
   for (var y=0; y<4; y++){
     board += "<tr>";    
     for (var x=0; x<4; x++){
-      board += "<td>" + letters[(x + y*4)] + "</td>";
+      var letter = Math.floor(Math.random() * 6);
+      board += "<td>" + cubes[(x + y*4)].charAt(letter) + "</td>";
     }
     board += "</tr>";
   }
-
-  alert(board);
 
   var div = document.getElementById('board');
   div.innerHTML = board;
