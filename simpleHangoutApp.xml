@@ -57,9 +57,9 @@
 <script>
 function startGame() {
   
-  var letters = {"a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d"};
+  var letters = ["a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d"];
 
-  var board = '<table>';
+  var board = "<table>";
 
   for (var y=0; y<4; y++){
     board += "<tr>";    
@@ -71,8 +71,8 @@ function startGame() {
 
   alert(board);
 
-  var div = document.getElementById('board');s
-  div.innerHTML = retVal;
+  var div = document.getElementById('board');
+  div.innerHTML = board;
 }
 
 function init() {
