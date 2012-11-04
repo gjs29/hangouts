@@ -94,7 +94,7 @@ function startGame() {
 }
 
 function startTimer(){
-  seconds = 3;
+  seconds = 180;
   document.getElementById("time").innerHTML = "Time: " + seconds;
   timer = setInterval(function(){countDown()},1000);
 }
