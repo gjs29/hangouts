@@ -40,39 +40,37 @@
 
 <script src="https://hangoutsapi.talkgadget.google.com/hangouts/api/hangout.js?v=1.0" ></script>
 
-<h3>Simple Hangout App</h3>
+<h3>Boggle</h3>
+
 
 <p>
-<input class="button" type="button" value="Show participants!" id="showParticipants" 
-    style="visibility:hidden;"
-    onClick="showParticipants()"/>
+<input class="button" type="button" value="Start game" id="showParticipants" 
+    onClick="startGame()"/>
 </p>
 
-<div id="participantsDiv"></div>
+<div id="board"></div>
 
 <hr>
 
-<p><a href="http://developers.google.com/+/hangouts/getting-started">Read the docs</a> to learn more about developing hangouts!</a></p>
 
 <script>
-function showParticipants() {
-  var participants = gapi.hangout.getParticipants();
+function startGame() {
+  
+  var letters = {"a","b","c","d","a","b","c","d","a","b","c","d","a","b","c","d"};
 
-  var retVal = '<p>Participants: </p><ul>';
+  var board = '<table>';
 
-  for (var index in participants) {
-    var participant = participants[index];
-
-    if (!participant.person) {
-      retVal += '<li>A participant not running this app</li>';
+  for (var y=0; y<4; y++){
+    board += "<tr>";    
+    for (var x=0; x<4; x++){
+      board += "<td>" + letters[(x + y*4)] + "</td>";
     }
-    retVal += '<li>' + participant.person.displayName + '</li>';
+    board += "</tr>";
   }
 
-  retVal += '</ul>';
+  alert(board);
 
-  var div = document.getElementById('participantsDiv');
-
+  var div = document.getElementById('board');s
   div.innerHTML = retVal;
 }
 
