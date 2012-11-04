@@ -94,7 +94,7 @@ function startGame() {
 }
 
 function startTimer(){
-  seconds = 3;
+  seconds = 180;
   document.getElementById("time").innerHTML = "Time: " + seconds;
   timer = setInterval(function(){countDown()},1000);
 }
@@ -104,7 +104,7 @@ function countDown(){
   document.getElementById("time").innerHTML = "Time: " + seconds;
   if(seconds < 0){
     clearInterval(timer);
-    document.getElementById("time").innerHTML = "<h1 style='color:red;'>GAME OVER</h1>";
+    document.getElementById("time").innerHTML = "<div style='color:red;'>GAME OVER</div>";
   }
 }
 
